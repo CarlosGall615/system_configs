@@ -27,27 +27,30 @@ frame1 = ctk.CTkFrame(master=app,  width=150, height=380, fg_color='SkyBlue4')
 frame1.place(x=10, y=110)
 frame1.pack_propagate(False)
 
-frame_home = ctk.CTkFrame(app, width=765, height=380, fg_color='SkyBlue4')
+frame_home = ctk.CTkFrame(app, width=765, height=380, fg_color='#FFDFA1')
 frame_home.place(x=165, y=110)
 frame_home.pack_propagate(False)
 
 # Campos de Informação (Label='' || Entry=''  || Button='')
 
+tabela = ctk.CTkTabview(frame_home, width=770, height=400, fg_color="SkyBlue4",
+                        segmented_button_fg_color='SkyBlue4',
+                        segmented_button_selected_color="#FFFFFF",
+                        segmented_button_selected_hover_color='#ababab',
+                        segmented_button_unselected_color='#FFFFFF',
+                        segmented_button_unselected_hover_color='#ababab',
+                        text_color="#2D2D2D",
+                        bg_color="SkyBlue4",
+                        corner_radius=20,
+                        
+                        )
+tabela.pack()
+tabela.add("Permissões")
+tabela.add("Servidor Local")
+tabela.add("Domínio WEB")
+tabela._segmented_button.configure(height=38)
+tabela._segmented_button.configure(font=("Arial", 14, "bold"))
 
-
-
-
-tab_navegation = ctk.CTkTabview(frame_home, width=700, height= 280,
-                                segmented_button_fg_color='SkyBlue4',
-                                segmented_button_unselected_color='SkyBlue4',
-                                segmented_button_unselected_hover_color='SkyBlue4',
-                                segmented_button_selected_hover_color='SkyBlue4',
-                                fg_color='SkyBlue3'
-                                )
-tab_navegation.pack()
-tab_navegation.add("Geral")
-tab_navegation.add("Servidor Local")
-tab_navegation.add("Permissões")
 
 button = ctk.CTkButton(frame1, text='Editar')
 button.pack()
