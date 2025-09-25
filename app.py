@@ -46,7 +46,12 @@ def abrir_home(usuario):
                 guia_produtos.pack()
                 return
 
+        
+
+
         def salvar_proutos():
+
+                
 
                 if messagebox.askyesno("Confirmação", "Salvar o Produto?"):
 
@@ -61,13 +66,13 @@ def abrir_home(usuario):
                                 lista_produtos = (nome_produto, preco_produto, categoria_produto)
                                 produtos.append(lista_produtos)
 
-                                tabela_produtos.insert('', 'end', value=lista_produtos)
+                                
+                                
                                 name_product.delete(0, 'end')
                                 preco_product.delete(0, 'end')
                                 category_product.delete(0, 'end')
                                 print("Produto Salvo com Sucesso!")
-                                print(lista_produtos)
-                                print(produtos)
+                                
 
 
 # ----------------------------------------------------------
@@ -156,7 +161,7 @@ def abrir_home(usuario):
         frame_product.place(x=10, y=30)
 
         frame_add_product_tabela = guia_produtos.tab("Produtos Cadastrados")
-        frame_lista_produtos = ctk.CTkFrame(frame_add_product_tabela, width=600, height=500, fg_color='SkyBlue3')
+        frame_lista_produtos = ctk.CTkFrame(frame_add_product_tabela, width=800, height=500, fg_color='SkyBlue3')
         frame_lista_produtos.place(x=10, y=30)
 
         # ------------------------------------------------------------------
@@ -376,14 +381,7 @@ def abrir_home(usuario):
         btn_salvar_product = ctk.CTkButton(frame_product, text='Salvar', command=salvar_proutos)
         btn_salvar_product.place(x=100, y=220)
         
-        colunas_tabela = ('Nome', 'Preço', 'Categoria')
-        tabela_produtos = ttk.Treeview(frame_lista_produtos, columns=colunas_tabela, show='headings',)
-        tabela_produtos.pack()
-        tabela_produtos.heading('Nome', text='Produto')
-        tabela_produtos.heading('Preço', text='Preço do Produto')
-        tabela_produtos.heading('Categoria', text='Categoria do Produto')
 
-        
         style = ttk.Style(app)
 
         style.configure("Treeview",
@@ -396,6 +394,8 @@ def abrir_home(usuario):
         style.configure("colunas_tabela",
                         font=('arial bold', 14),
                         font_color='black')
+        
+        
         # comando para Iniciar Aplicação
         app.mainloop()
 
